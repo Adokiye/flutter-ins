@@ -159,7 +159,7 @@ class _HomeState extends State<Home> {
               children: <Widget>[
                 Text(
                     Localized.of(context)
-                            .trans(LocalizedKey.travelInspiration) ??
+                            .trans(LocalizedKey.trendingPlaces) ??
                         "",
                     style: TextStyle(
                         fontFamily: GoloFont,

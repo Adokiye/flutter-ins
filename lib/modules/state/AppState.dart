@@ -4,6 +4,7 @@ import 'package:Instahelp/src/entity/City.dart';
 import 'package:Instahelp/src/entity/PlaceAmenity.dart';
 import 'package:Instahelp/src/entity/PlaceCategory.dart';
 import 'package:Instahelp/src/entity/PlaceType.dart';
+import 'package:Instahelp/src/entity/Place.dart';
 import 'package:Instahelp/src/entity/Post.dart';
 import 'package:Instahelp/src/entity/User.dart';
 
@@ -17,6 +18,7 @@ class AppState {
   List<City> cities = [];
     // myPlaces
   List<City> myPlaces = [];
+  List<Place> trendingPlaces = [];
   // Popular cities (Home screen)
   List<City> popularCities = [];
   // Categories | Amenities

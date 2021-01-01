@@ -43,7 +43,7 @@ class ApiAuth {
     });
   }
 
-  static Future<ResponseListData> fetchPlaces() {
+  static Future fetchPlaces() {
     var url = Platform().shared.baseUrl +
         "app/users/" +
         AppState().user.id.toString() +
@@ -53,7 +53,7 @@ class ApiAuth {
       var jsonObj = {};
       if (data != null && data.data != null) {
         var jsonData = json.decode(data.data);
-        return ResponseListData(jsonData['data'], data.error);
+        return jsonData;
       } else {
         return ResponseListData([], '');
       }

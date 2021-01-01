@@ -1,5 +1,7 @@
 import 'package:Instahelp/components/backButtonWhite.dart';
+import 'package:Instahelp/components/buttonBlue.dart';
 import 'package:Instahelp/components/emptyData.dart';
+import 'package:Instahelp/modules/setting/colors.dart';
 import 'package:Instahelp/src/providers/request_services/Api+auth.dart';
 import 'package:Instahelp/src/views/auth/signin.dart';
 import 'package:Instahelp/src/views/profile/AddPlace.dart';
@@ -25,13 +27,19 @@ class MyPlaces extends StatefulWidget {
 }
 
 class _MyPlacesState extends State<MyPlaces> {
+  bool _loader = false;
   @override
   void initState() {
     super.initState();
+    setState((){
+      _loader = true;
+    });
     ApiAuth.fetchPlaces().then((response) {
       AppState().myPlaces = List<City>.generate(
-          response.data.length, (i) => City.fromJson(response.data[i]));
-          
+          response['data'].length, (i) => City.fromJson(response['data'][i]));
+       setState((){
+      _loader = false;
+    });    
     });
   }
 
@@ -76,13 +84,21 @@ class _MyPlacesState extends State<MyPlaces> {
                   fontSize: 32),
             ),
           ),
-          AppState().myPlaces.length > 1
-              ? Flexible(
-                  flex: 1,
-                  child: Container(
-                      margin: EdgeInsets.only(bottom: 5),
-                      child: _buildMyPlacesGridView()),
-                )
+            _loader ?Center(
+                        child:  CircularProgressIndicator(backgroundColor: GoloColors.primary,
+                    )
+                      ) :AppState().myPlaces!= null&&AppState().myPlaces.length > 0
+              ? Column(
+                children:<Widget>[
+                  Container(
+                height:200,
+                child: _buildMyPlacesGridView()),
+                SizedBox(height:10),
+                ButtonBlue(title: 'ADD NEW PLACE', onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => AddPlace()),
+                        );
+                      })])
               : Column(children: <Widget>[
                   // #7 padding bottom
                   SizedBox(height: 80),
@@ -104,9 +120,10 @@ class _MyPlacesState extends State<MyPlaces> {
 
   // ### City list
   Widget _buildMyPlacesGridView() => new GridView.count(
+    
       padding: EdgeInsets.only(top: 5, bottom: 5),
       crossAxisCount: 2,
-      childAspectRatio: 0.715,
+     // childAspectRatio: 0.715,
       children: List.generate(AppState().myPlaces.length, (index) {
         return _buildMyPlacesCell(index);
       }));
@@ -116,7 +133,8 @@ class _MyPlacesState extends State<MyPlaces> {
           margin: EdgeInsets.only(right: 8, bottom: 8),
           height: 350,
           child: GestureDetector(
-            child: CityCell(city: AppState().myPlaces[imageIndex]),
+            child: CityCell(city: AppState().myPlaces[imageIndex],
+            myPlace:true),
             onTap: () {
               HomeNav(context).openCity(AppState().myPlaces[imageIndex]);
             },

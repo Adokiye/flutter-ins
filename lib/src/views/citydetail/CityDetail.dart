@@ -9,7 +9,6 @@ import 'package:Instahelp/localization/LocalizedKey.dart';
 import 'package:Instahelp/modules/controls/images/MyImageHelper.dart';
 import 'package:Instahelp/modules/setting/colors.dart';
 import 'package:Instahelp/modules/setting/fonts.dart';
-import 'package:Instahelp/modules/state/AppState.dart';
 import 'package:Instahelp/src/blocs/navigation/NavigationBloc.dart';
 import 'package:Instahelp/src/blocs/city_detail/CityDetailBloc.dart';
 import 'package:Instahelp/src/entity/City.dart';

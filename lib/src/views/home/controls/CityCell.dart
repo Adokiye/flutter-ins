@@ -70,11 +70,6 @@ class _CityCellState extends State<CityCell> {
                                 fontSize: 24,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500)),
-                        Text(widget.city != null ? "${widget.city.count ?? 0} places" : "0 places",
-                            style: TextStyle(
-                                fontFamily: GoloFont,
-                                fontSize: 16,
-                                color: Colors.white))
                       ]),
                 )
               ],

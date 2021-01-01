@@ -6,8 +6,10 @@ import 'package:Instahelp/src/entity/City.dart';
 
 class CityCell extends StatefulWidget {
   final City city;
+  final bool myPlace;
 
-  CityCell({Key key, this.city}): super(key: key);
+  CityCell({Key key, this.city,
+  this.myPlace = false}): super(key: key);
   
   @override
   _CityCellState createState() {
@@ -17,9 +19,11 @@ class CityCell extends StatefulWidget {
 }
 
 class _CityCellState extends State<CityCell> {
+
   @override
   void initState() {
     super.initState();
+    print(widget.city);
   }
 
   @override
@@ -64,17 +68,13 @@ class _CityCellState extends State<CityCell> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
-                        Text(widget.city.name ?? "",
+                      Text(widget.city.name ?? "",
                             style: TextStyle(
                                 fontFamily: GoloFont,
                                 fontSize: 24,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500)),
-                        Text(widget.city != null ? "${widget.city.count ?? 0} places" : "0 places",
-                            style: TextStyle(
-                                fontFamily: GoloFont,
-                                fontSize: 16,
-                                color: Colors.white))
+                     Container()
                       ]),
                 )
               ],

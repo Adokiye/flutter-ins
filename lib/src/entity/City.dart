@@ -24,7 +24,9 @@ class City extends Base{
   int state_id;
 
   City(Map<String, dynamic> json) : super(json){
-    count = json["places_count"];
+    print(json);
+    print('json');
+    count = json["translations"].length;
     name = json["name"];
     description = json["description"];
     country = json["country"] != null ? json["country"]["name"] : "";

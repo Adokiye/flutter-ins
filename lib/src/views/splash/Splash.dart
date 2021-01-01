@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:Instahelp/src/entity/Place.dart';
 import 'package:flutter/material.dart';
 import 'package:Instahelp/modules/setting/colors.dart';
 import 'package:Instahelp/modules/setting/fonts.dart';
@@ -118,7 +119,7 @@ class _SplashPageState extends State<SplashPage> {
 
   // ### Fetch Data
   void loadData() async {
-    await Future.wait([fetchToken(),fetchAllCities(),fetchCategories(), fetchPosts(),])
+    await Future.wait([fetchToken(),fetchAllTrendingPlaces(),fetchAllCities(),fetchCategories(), fetchPosts(),])
         .then((value) {
       print('ggg');
       openDashboard();
@@ -147,6 +148,14 @@ class _SplashPageState extends State<SplashPage> {
       print(response.data);
       AppState().cities = List<City>.generate(
           response.data.length, (i) => City.fromJson(response.data[i]));
+    });
+  }
+
+    Future fetchAllTrendingPlaces() async {
+    return ApiCity.fetchTrendingPlaces().then((response) {
+      print(response.data);
+      AppState().trendingPlaces = List<Place>.generate(
+          response.data.length, (i) => Place.fromJson(response.data[i]));
     });
   }
 

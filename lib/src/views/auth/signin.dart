@@ -67,10 +67,7 @@ class _SignInState extends State<SignIn> {
     // setState(() {
     //   _loading = false;
     // });
-    responseJson = response.data;
-    print('----');
-    print(responseJson['data']['access_token']);
-    print('----');
+   
 
     if (response.statusCode != 200) {
       print('sksksk');
@@ -86,7 +83,10 @@ class _SignInState extends State<SignIn> {
         // duration: Duration(seconds: 3),
       ));
     }else{
-
+ responseJson = response.data;
+    print('----');
+    print(responseJson['data']['access_token']);
+    print('----');
     print(responseJson);
     if(responseJson['data']['access_token'] == null){
        setState(() {

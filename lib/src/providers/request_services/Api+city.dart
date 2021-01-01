@@ -24,6 +24,22 @@ class ApiCity {
     });
   }
 
+    static Future<ResponseListData> fetchTrendingPlaces({PageQuery query}) {
+    var url = Platform().shared.baseUrl + "app/trending-places";
+    return Api.requestGetPaging(url, query).then((data) {
+      print(data.data);
+      var jsonObj = {};
+      if(data != null && data.data != null){
+   //   jsonObj = json.decode(data.data) as Map;
+      var jsonData = json.decode(data.data);      
+      return ResponseListData(jsonData, data.error);
+      }else{
+       return ResponseListData([],'');
+      }
+
+    });
+  }
+
   static Future<ResponseListData> fetchCitiesPopular({PageQuery query}) {
     var url = Platform().shared.baseUrl + "cities/popular";
     return Api.requestGetPaging(url, query).then((data) {

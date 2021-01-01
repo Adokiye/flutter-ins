@@ -78,8 +78,8 @@ class Place extends Base{
     author = json["author"];
     pingStatus = json["ping_status"];
     template = json["template"];
-    description = parse(json["description"] ?? "").documentElement.text;
-    name = parse(json["name"]).documentElement.text;
+    description = json["description"];
+    name = json["name"];
     // place type
     types = json["place-type"] != null ? json["place-type"].cast<int>() : [];
     // cateogries

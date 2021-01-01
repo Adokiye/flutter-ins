@@ -7,9 +7,9 @@ class MyImage {
   // //widget.city.featuredImamge != null ? Image.network(widget.city.featuredImamge).image : AssetImage('assets/photos/paris.jpg')
   // New way
   static Widget from(String url, {BorderRadius borderRadius, Color color}) {
-    return CachedNetworkImage(
+    return url != 'https://insta-help.s3.amazonaws.com/'?CachedNetworkImage(
       fit: BoxFit.cover,
-      imageUrl: url != 'https://insta-help.s3.amazonaws.com/' ?? "",
+      imageUrl: url ?? "",
       placeholder: (context, url) => Container(
         alignment: Alignment.center,
         child: Container(
@@ -29,6 +29,6 @@ class MyImage {
         borderRadius: borderRadius
     ),
   ),
-    );
+    ):Icon(Icons.image, color: GoloColors.primary.withOpacity(0.6));
   }
 }
