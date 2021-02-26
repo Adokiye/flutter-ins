@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -26,18 +26,17 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   google_maps_flutter: ^0.5.24+1
-  
+
   cupertino_icons: ^0.1.2
   den_lineicons: #^0.0.3
     path: ./packages/den_lineicons
-  
+
   dependencies:
   flutter_svg: ^0.18.0
-  
+
   http: ^0.12.0+4
   flutter_spinkit: "^4.1.1"
   url_launcher: "^5.4.1"
@@ -46,14 +45,14 @@ dependencies:
   cached_network_image: ^2.0.0
   collection: ^1.14.11
   page_transition: ^1.1.5
-  shared_preferences: '>=0.5.7+3 <2.0.0'
+  shared_preferences: ">=0.5.7+3 <2.0.0"
   flutter_rating_bar: ^3.0.1+1
   dio: ^3.0.9
   loading_overlay: ^0.2.1
   fluttertoast: ^7.0.2
   uuid: ^2.2.2
   timeago: ^2.0.27
-  flutter_native_splash: ^0.1.9 
+  flutter_native_splash: ^0.1.9
   stripe_payment: ^1.0.8
   flutter_material_pickers: ^1.8.1
   flutter_google_places: ^0.2.6
@@ -73,7 +72,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -98,47 +96,47 @@ flutter:
   fonts:
     - family: Jost
       fonts:
-        - asset: assets/fonts/Jost/Jost-Book.ttf 
-        - asset: assets/fonts/Jost/Jost-Hairline.ttf 
+        - asset: assets/fonts/Jost/Jost-Book.ttf
+        - asset: assets/fonts/Jost/Jost-Hairline.ttf
           weight: 100
-        - asset: assets/fonts/Jost/Jost-HairlineItalic.ttf 
+        - asset: assets/fonts/Jost/Jost-HairlineItalic.ttf
           weight: 100
           style: italic
-        - asset: assets/fonts/Jost/Jost-Thin.ttf 
+        - asset: assets/fonts/Jost/Jost-Thin.ttf
           weight: 200
-        - asset: assets/fonts/Jost/Jost-ThinItalic.ttf 
+        - asset: assets/fonts/Jost/Jost-ThinItalic.ttf
           weight: 200
           style: italic
-        - asset: assets/fonts/Jost/Jost-Light.ttf 
+        - asset: assets/fonts/Jost/Jost-Light.ttf
           weight: 300
-        - asset: assets/fonts/Jost/Jost-LightItalic.ttf 
+        - asset: assets/fonts/Jost/Jost-LightItalic.ttf
           weight: 300
           style: italic
-        - asset: assets/fonts/Jost/Jost-BookItalic.ttf 
+        - asset: assets/fonts/Jost/Jost-BookItalic.ttf
           style: italic
-        - asset: assets/fonts/Jost/Jost-Medium.ttf 
+        - asset: assets/fonts/Jost/Jost-Medium.ttf
           weight: 500
-        - asset: assets/fonts/Jost/Jost-MediumItalic.ttf 
+        - asset: assets/fonts/Jost/Jost-MediumItalic.ttf
           weight: 500
           style: italic
-        - asset: assets/fonts/Jost/Jost-Semi.ttf 
+        - asset: assets/fonts/Jost/Jost-Semi.ttf
           weight: 600
-        - asset: assets/fonts/Jost/Jost-SemiItalic.ttf 
+        - asset: assets/fonts/Jost/Jost-SemiItalic.ttf
           weight: 600
           style: italic
-        - asset: assets/fonts/Jost/Jost-Bold.ttf 
+        - asset: assets/fonts/Jost/Jost-Bold.ttf
           weight: 700
-        - asset: assets/fonts/Jost/Jost-BoldItalic.ttf 
+        - asset: assets/fonts/Jost/Jost-BoldItalic.ttf
           weight: 700
           style: italic
-        - asset: assets/fonts/Jost/Jost-Heavy.ttf 
+        - asset: assets/fonts/Jost/Jost-Heavy.ttf
           weight: 800
-        - asset: assets/fonts/Jost/Jost-HeavyItalic.ttf 
+        - asset: assets/fonts/Jost/Jost-HeavyItalic.ttf
           weight: 800
           style: italic
-        - asset: assets/fonts/Jost/Jost-Black.ttf 
+        - asset: assets/fonts/Jost/Jost-Black.ttf
           weight: 900
-        - asset: assets/fonts/Jost/Jost-BlackItalic.ttf 
+        - asset: assets/fonts/Jost/Jost-BlackItalic.ttf
           weight: 900
           style: italic
 

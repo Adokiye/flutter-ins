@@ -102,15 +102,16 @@ class _SuggestionCell extends State<SuggestionCell> {
                                     ),
                                   ),
                                   Visibility(
-                                    visible: widget.place.hasRate,
-                                    child: Icon(DenLineIcons.star,
-                                        color: GoloColors.primary, size: 11)
-                                  ),
+                                      visible: widget.place.hasRate,
+                                      child: Icon(DenLineIcons.star,
+                                          color: GoloColors.primary, size: 11)),
                                   Container(
                                     alignment: Alignment.centerLeft,
                                     margin: EdgeInsets.only(left: 5),
                                     child: Text(
-                                        (widget.place.reviewCount ?? 0) <= 0 ? "" : "(${widget.place.reviewCount})", // review count
+                                        (widget.place.reviewCount ?? 0) <= 0
+                                            ? ""
+                                            : "(${widget.place.reviewCount})", // review count
                                         style: TextStyle(
                                           fontFamily: GoloFont,
                                           color: GoloColors.primary,
@@ -161,7 +162,8 @@ class _SuggestionCell extends State<SuggestionCell> {
   }
 
   String getPlaceTypes(Place place) {
-    var string = place.placeTypes.map((placeType) => placeType.name).toList().join("\n");
+    var string =
+        place.placeTypes.map((placeType) => placeType.name).toList().join("\n");
     return string;
   }
 }
