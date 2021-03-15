@@ -28,7 +28,7 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  google_maps_flutter: ^0.5.24+1
+  google_maps_flutter: ^1.0.6
 
   cupertino_icons: ^0.1.2
   den_lineicons: #^0.0.3
@@ -37,9 +37,9 @@ dependencies:
   dependencies:
   flutter_svg: ^0.18.0
 
-  http: ^0.12.0+4
+  http: ^0.12.1
   flutter_spinkit: "^4.1.1"
-  url_launcher: "^5.4.1"
+  url_launcher: ^6.0.2
   html: ^0.14.0+3
   flutter_html: ^0.11.1
   cached_network_image: ^2.0.0
@@ -47,7 +47,7 @@ dependencies:
   page_transition: ^1.1.5
   shared_preferences: ">=0.5.7+3 <2.0.0"
   flutter_rating_bar: ^3.0.1+1
-  dio: ^3.0.9
+  dio: ^3.0.10
   loading_overlay: ^0.2.1
   fluttertoast: ^7.0.2
   uuid: ^2.2.2
@@ -56,8 +56,10 @@ dependencies:
   stripe_payment: ^1.0.8
   flutter_material_pickers: ^1.8.1
   flutter_google_places: ^0.2.6
-  google_maps_webservice: ^0.0.18
-  image_picker: ^0.6.2+1
+  google_maps_webservice: ^0.0.19
+  image_picker: ^0.6.7+12
+  http_parser: ^3.1.2
+  flutter_plugin_android_lifecycle: ^1.0.2
 
 flutter_native_splash:
   image: assets/app/launch/icon.png

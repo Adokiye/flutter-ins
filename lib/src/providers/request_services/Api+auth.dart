@@ -36,9 +36,9 @@ class ApiAuth {
       var jsonObj = {};
       if (data != null && data.data != null) {
         var jsonData = json.decode(data.data);
-        return ResponseListData(jsonData, data.error);
+        return jsonData;
       } else {
-        return ResponseListData([], '');
+        return null;
       }
     });
   }

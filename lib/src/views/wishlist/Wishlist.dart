@@ -32,8 +32,8 @@ class _WishlistState extends State<Wishlist> {
     if(widget.isLoggedIn){
       ApiAuth.fetchWishlist().then((response) {
         print(response);
-      // AppState().popularCities = List<City>.generate(
-      //     response.data.length, (i) => City.fromJson(response.data[i]));
+      AppState().wishlist = List<City>.generate(
+          response.data.length, (i) => City.fromJson(response.data[i]));
     });
     }
   }
@@ -67,7 +67,7 @@ class _WishlistState extends State<Wishlist> {
                   fontSize: 32),
             ),
           ),
-          AppState().popularCities.length > 1 ?
+          AppState().wishlist.length > 1 ?
 Flexible(
                 flex: 1,
                 child: Container(
@@ -104,7 +104,7 @@ Flexible(
         padding: EdgeInsets.only(top: 5, bottom: 5),
         crossAxisCount: 2,
         childAspectRatio: 0.715,
-        children: List.generate(AppState().popularCities.length, (index) {
+        children: List.generate(AppState().wishlist.length, (index) {
             return _buildWishlistCell(index);
         })
       );
@@ -114,9 +114,9 @@ Flexible(
         margin: EdgeInsets.only(right: 8, bottom: 8),
         height: 350,
         child: GestureDetector(
-        child: CityCell(city: AppState().popularCities[imageIndex]),
+        child: CityCell(city: AppState().wishlist[imageIndex]),
         onTap: () {
-          HomeNav(context).openCity(AppState().popularCities[imageIndex]);
+          HomeNav(context).openCity(AppState().wishlist[imageIndex]);
         },
       )
       ));

@@ -1,5 +1,3 @@
-
-
 import 'package:Instahelp/src/entity/City.dart';
 import 'package:Instahelp/src/entity/PlaceAmenity.dart';
 import 'package:Instahelp/src/entity/PlaceCategory.dart';
@@ -16,11 +14,13 @@ class AppState {
   }
   // Cities
   List<City> cities = [];
-    // myPlaces
+  // myPlaces
   List<City> myPlaces = [];
   List<Place> trendingPlaces = [];
   // Popular cities (Home screen)
   List<City> popularCities = [];
+  // wishlist
+  List<City> wishlist = [];
   // Categories | Amenities
   List<PlaceCategory> categories = [];
   List<PlaceAmenity> amenities = [];
@@ -35,13 +35,11 @@ class AppState {
 
   User user;
 
-  AppState._internal() {
-    
-  }
+  AppState._internal() {}
 
   // void clearCurrentCity() {
-    // currentCity = null;
-    // places.clear();
+  // currentCity = null;
+  // places.clear();
   // }
 
 }

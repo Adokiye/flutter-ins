@@ -62,7 +62,7 @@ class _AddPlaceState extends State<AddPlace> {
   String address;
   final GlobalKey<ScaffoldState> homeScaffoldKey = new GlobalKey<ScaffoldState>();
   GoogleMapsPlaces _places = GoogleMapsPlaces(apiKey: kGoogleApiKey);
-  final ImagePicker _picker = ImagePicker();
+  final _picker = ImagePicker();
   PickedFile _imageFile;
   dynamic _pickImageError;
   String _retrieveDataError;
