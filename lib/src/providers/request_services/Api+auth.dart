@@ -28,9 +28,8 @@ class ApiAuth {
 
     static Future<ResponseListData> addToWishlist(Map<String, dynamic> body) {
     var url = Platform().shared.baseUrl +
-        "app/users/" +
-        AppState().user.id.toString() +
-        "/place/wishlist";
+        "app" +
+        "/places/wishlist";
     return ApiToken.requestPost(url,body).then((data) {
       print(data.data);
       var jsonObj = {};

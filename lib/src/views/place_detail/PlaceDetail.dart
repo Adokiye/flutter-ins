@@ -266,7 +266,7 @@ class _PlaceDetailState extends State<PlaceDetail> {
                       setState(() {
                         _loading = true;
                       });
-                      Map<String, dynamic> body = {"place_id": place.id};
+                      Map<String, dynamic> body = {"place_id": place.id.toString()};
                       await ApiAuth.addToWishlist(body).then((response) {
                         print(response);
                           setState(() {
